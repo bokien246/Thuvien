@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quản lý Tài chính</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f3f4f6;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+    }
+
+    .box-section {
+      background: #fff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+    }
+
+    .btn-custom {
+      border-radius: 10px;
+      min-width: 100px;
+    }
+
+    thead {
+      background-color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- FORM TÀI CHÍNH -->
+    <div class="box-section">
+      <h2 class="section-title">💰 Quản lý Tài chính</h2>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="form-label">Ngày bắt đầu</label>
+            <input type="date" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Ngày kết thúc</label>
+            <input type="date" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Loại giao dịch</label>
+            <select class="form-select">
+              <option>Thu</option>
+              <option>Chi</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Số tiền (VNĐ)</label>
+            <input type="number" class="form-control" placeholder="100000">
+          </div>
+          <div class="col-md-8">
+            <label class="form-label">Nội dung</label>
+            <input type="text" class="form-control" placeholder="Ví dụ: Thu học phí, Chi mua sách...">
+          </div>
+        </div>
+
+        <div class="text-end mt-4">
+          <button type="submit" class="btn btn-success btn-custom">Thêm</button>
+          <button type="reset" class="btn btn-secondary btn-custom">Làm mới</button>
+          <button type="button" class="btn btn-outline-primary btn-custom">Xuất Excel</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BẢNG GIAO DỊCH -->
+    <div class="table-responsive bg-white p-3 rounded shadow-sm">
+      <table class="table table-bordered align-middle">
+        <thead>
+          <tr>
+            <th>Mã GD</th>
+            <th>Ngày</th>
+            <th>Nội dung</th>
+            <th>Loại</th>
+            <th>Số tiền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GD001</td>
+            <td>2025-04-10</td>
+            <td>Thu học phí kỳ 2</td>
+            <td>Thu</td>
+            <td>5,000,000</td>
+          </tr>
+          <tr>
+            <td>GD002</td>
+            <td>2025-04-11</td>
+            <td>Chi mua sách Toán</td>
+            <td>Chi</td>
+            <td>1,200,000</td>
+          </tr>
+          <!-- Dữ liệu động -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

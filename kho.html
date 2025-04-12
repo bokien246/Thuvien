@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quản lý Kho sách</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f3f4f6;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+    }
+
+    .section-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+    }
+
+    .btn-custom {
+      border-radius: 10px;
+      min-width: 100px;
+    }
+
+    table thead {
+      background-color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- FORM KHO -->
+    <div class="section-box">
+      <h2 class="section-title">📦 Quản lý Kho Sách</h2>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label">Mã sách</label>
+            <input type="text" class="form-control" placeholder="VD: S001" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Tên sách</label>
+            <input type="text" class="form-control" placeholder="Giải tích A1" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Số lượng</label>
+            <input type="number" min="0" class="form-control" value="0" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Giá nhập (VNĐ)</label>
+            <input type="number" min="0" class="form-control" placeholder="50000">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Vị trí lưu trữ</label>
+            <input type="text" class="form-control" placeholder="Kệ A3, Tầng 2...">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Nhà cung cấp</label>
+            <input type="text" class="form-control" placeholder="NXB Giáo dục">
+          </div>
+        </div>
+
+        <div class="text-end mt-4">
+          <button type="submit" class="btn btn-success btn-custom">Thêm</button>
+          <button type="button" class="btn btn-primary btn-custom">Sửa</button>
+          <button type="button" class="btn btn-danger btn-custom">Xoá</button>
+          <button type="reset" class="btn btn-secondary btn-custom">Làm mới</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- BẢNG KHO -->
+    <div class="table-responsive bg-white p-3 rounded shadow-sm">
+      <table class="table table-bordered align-middle">
+        <thead>
+          <tr>
+            <th>Mã sách</th>
+            <th>Tên sách</th>
+            <th>Số lượng</th>
+            <th>Giá nhập</th>
+            <th>Vị trí</th>
+            <th>Nhà cung cấp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S001</td>
+            <td>Giải tích A1</td>
+            <td>20</td>
+            <td>50,000</td>
+            <td>Kệ A3</td>
+            <td>NXB Giáo dục</td>
+          </tr>
+          <!-- Thêm dòng động tại đây -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
