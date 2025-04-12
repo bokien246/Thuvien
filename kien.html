@@ -128,55 +128,7 @@
   
 
   <!-- 💗 JavaScript hiệu ứng tim 💗 -->
-  <script>
-    function getHeart(e) {
-      let ele = document.createElement("div");
-      ele.className = "element";
-      document.querySelector("body").prepend(ele);
-      ele.style.left = e.clientX + 'px';
-      ele.style.top = e.clientY - 10 + 'px';
-      setTimeout(() => {
-        let text = document.querySelectorAll(".element")[0],
-            directionX = Math.random() < 0.5 ? -1 : 1,
-            directionY = Math.random() < 0.5 ? -1 : 1;
-        text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 100)) + 'px';
-        text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 100)) + 'px';
-        text.style.opacity = 0;
-        text.style.transform = 'scale(0.4)';
-        text.innerHTML = "💗";
-        text.style.zIndex = "100";
-        setTimeout(() => {
-          ele.remove();
-        }, 1000);
-      }, 10);
-    }
-
-    document.onmousemove = function (e) {
-      getHeart(e);
-    };
-
-    document.onclick = function (e) {
-      let ele = document.createElement("div");
-      ele.className = "heartRain";
-      document.querySelector("body").prepend(ele);
-      ele.style.left = e.clientX - 10 + 'px';
-      ele.style.top = e.clientY - 10 + 'px';
-      ele.innerHTML = "💗";
-      setTimeout(() => {
-        ele.style.top = "calc(85% - 25px)";
-      }, 100);
-      setTimeout(() => {
-        ele.style.opacity = 0;
-      }, 3000);
-      setTimeout(() => {
-        ele.remove();
-      }, 4000);
-    };
-
-    document.onmousedown = (e) => {
-      getHeart(e);
-    };
-  </script>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
