@@ -21,6 +21,10 @@
       background-color: #f1f1f1;
       cursor: pointer;
     }
+    .selected {
+  background-color: #d1e7dd !important;
+}
+
   </style>
 </head>
 <body>
@@ -114,6 +118,19 @@
     document.getElementById("vitri").value = cells[4].innerText;
     document.getElementById("nhacc").value = cells[5].innerText;
   }
+  function chonDong(row) {
+  if (rowDangChon) rowDangChon.classList.remove("selected");
+  rowDangChon = row;
+  row.classList.add("selected");
+
+  const cells = row.getElementsByTagName("td");
+  document.getElementById("masach").value = cells[0].innerText;
+  document.getElementById("tensach").value = cells[1].innerText;
+  document.getElementById("soluong").value = cells[2].innerText;
+  document.getElementById("gianhap").value = cells[3].innerText;
+  document.getElementById("vitri").value = cells[4].innerText;
+  document.getElementById("nhacc").value = cells[5].innerText;
+}
 
   function suaSach() {
     if (!rowDangChon) {
@@ -182,6 +199,27 @@
 
     return { masach, tensach, soluong, gianhap, vitri, nhacc };
   }
+  // Dữ liệu mẫu ban đầu
+const duLieuMau = [
+  { masach: "S001", tensach: "Giải tích A1", soluong: "20", gianhap: "50000", vitri: "Kệ A3", nhacc: "NXB Giáo dục" },
+  { masach: "S002", tensach: "Lập trình C", soluong: "15", gianhap: "60000", vitri: "Kệ B1", nhacc: "NXB Khoa học" },
+  { masach: "S003", tensach: "Hóa học 12", soluong: "30", gianhap: "45000", vitri: "Kệ C2", nhacc: "NXB GD Trẻ em" }
+];
+
+window.onload = function () {
+  const tbody = document.querySelector("#bangSach tbody");
+  duLieuMau.forEach(data => {
+    const row = tbody.insertRow();
+    for (const value of Object.values(data)) {
+      const cell = row.insertCell();
+      cell.innerText = value;
+    }
+    row.onclick = function () {
+      chonDong(this);
+    };
+  });
+};
+
 </script>
 
 </body>
